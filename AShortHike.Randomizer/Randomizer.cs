@@ -48,12 +48,21 @@ namespace AShortHike.Randomizer
         public void Update()
         {
             // Debugging
-            //if (Input.GetKeyDown(KeyCode.Backslash))
-            //{
-            //    Main.Log("Giving cheat items!");
-            //    Singleton<GlobalData>.instance.gameData.AddCollected(CollectableItem.Load("GoldenFeather"), 10, false);
-            //    Singleton<GlobalData>.instance.gameData.AddCollected(CollectableItem.Load("SilverFeather"), 5, false);
-            //}
+            if (Input.GetKeyDown(KeyCode.Backslash))
+            {
+                Main.Log("Giving cheat items!");
+                Singleton<GlobalData>.instance.gameData.AddCollected(CollectableItem.Load("GoldenFeather"), 1, false);
+            }
+            if (Input.GetKeyDown(KeyCode.Equals))
+            {
+                Main.Log("Removing cheat items!");
+                Singleton<GlobalData>.instance.gameData.AddCollected(CollectableItem.Load("GoldenFeather"), -1, false);
+            }
+            if (Input.GetKeyDown(KeyCode.Minus))
+            {
+                Main.Log("Removing cheat items!");
+                Singleton<GlobalData>.instance.gameData.AddCollected(CollectableItem.Load("SilverFeather"), -1, false);
+            }
 
             if (_currentScene == "GameScene")
             {
